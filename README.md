@@ -55,8 +55,9 @@ Supported ranges include:
 ## Feature Checklist
 
 - [ ] Add other Umami endpoints such as `/api/websites/:websiteId/active` and `/api/websites/:websiteId/events`
-- [ ] Minimal API version
+- [ ] Logging
 - [ ] Unit testing
 - [ ] Dockerize
+- [ ] Minimal API version
 
 Opening issues and submitting feature requests is encouraged and appreciated! If you have ideas for improvements, encounter bugs, or want to request new features, please open an issue or submit a pull request on this repository.
