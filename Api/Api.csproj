@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ContainerImageTag>1.0.0</ContainerImageTag>
+    <ContainerImageTag>1.0.1</ContainerImageTag>
     <ContainerRepository>BrianCollet/umami-cloud-api-wrapper</ContainerRepository>
   </PropertyGroup>
 
