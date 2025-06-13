@@ -17,12 +17,6 @@ builder.Services.AddHsts(options =>
     options.MaxAge = TimeSpan.FromDays(60);
 });
 
-builder.Services.AddHttpsRedirection(options =>
-{
-    options.RedirectStatusCode = Status307TemporaryRedirect;
-    options.HttpsPort = 5001;
-});
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,8 +28,6 @@ if (app.Environment.IsDevelopment())
         options.DocumentPath = "/openapi/v1.json";
     });
 }
-
-app.UseHttpsRedirection();
 
 app.UseAuthorization();
 

@@ -1,0 +1,36 @@
+#
+name: Publish to GitHub Container Registry
+
+on:
+  push:
+    branches: ["release"]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  DOTNET_VERSION: "9.x"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish and push the container image
+        run: |
+          dotnet publish --os linux --arch x64 /t:PublishContainer -p ContainerRegistry=${{ env.REGISTRY }}
