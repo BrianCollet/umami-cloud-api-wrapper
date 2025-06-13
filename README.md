@@ -43,29 +43,34 @@ Example output:
   "endAt": 1749884399999,
   "apiStats": {
     "pageViews": {
-      "value": 15,
+      "value": 16,
       "prev": 24,
-      "diff": "-37%"
+      "diff": "-33%",
+      "valueWithDiff": "16(-33%)"
     },
     "visitors": {
-      "value": 10,
+      "value": 11,
       "prev": 23,
-      "diff": "-56%"
+      "diff": "-52%",
+      "valueWithDiff": "11(-52%)"
     },
     "visits": {
-      "value": 13,
+      "value": 14,
       "prev": 24,
-      "diff": "-45%"
+      "diff": "-41%",
+      "valueWithDiff": "14(-41%)"
     },
     "bounces": {
-      "value": 11,
+      "value": 12,
       "prev": 24,
-      "diff": "-54%"
+      "diff": "-50%",
+      "valueWithDiff": "12(-50%)"
     },
     "totalTime": {
       "value": 62,
       "prev": 0,
-      "diff": "0%"
+      "diff": "0%",
+      "valueWithDiff": "62(0%)"
     }
   }
 }
