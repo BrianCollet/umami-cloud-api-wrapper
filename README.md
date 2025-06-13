@@ -19,9 +19,15 @@ This wrapper allows you to programmatically define these time ranges using intui
 - Exposes endpoints to fetch website stats using easy-to-understand time ranges.
 - Handles conversion of time ranges (e.g., `24hours`, `7days`, `30days`, etc.) to the millisecond values expected by the Umami Cloud API.
 
-## Example Usage
+## Example Usage (Local Testing)
 
-To get stats for the last 7 days for a website:
+To run the API locally for testing, use the following command:
+
+```
+dotnet run --launch-profile https
+```
+
+Then you can get stats for the last 7 days for a website:
 
 ```
 GET /api/{websiteId}/stats?range=7days
@@ -41,6 +47,22 @@ Supported ranges include:
 - `9months`
 - `1year`
 
+## Running in Docker
+
+You can run this API using Docker Compose. Here is an example service definition:
+
+```yaml
+services:
+  umami-cloud-api-wrapper:
+    container_name: umami-cloud-api-wrapper
+    image: ghcr.io/briancollet/umami-cloud-api-wrapper:1.0.0
+    environment:
+      - ASPNETCORE_HTTP_PORTS=7887
+    ports:
+      - 7887:7887
+    restart: unless-stopped
+```
+
 ## Project Structure
 
 - `Api/Controllers/UmamiController.cs`: Main API controller handling requests and time range conversion.
@@ -57,7 +79,7 @@ Supported ranges include:
 - [ ] Add other Umami endpoints such as `/api/websites/:websiteId/active` and `/api/websites/:websiteId/events`
 - [ ] Logging
 - [ ] Unit testing
-- [ ] Dockerize
+- [x] Dockerize
 - [ ] Minimal API version
 
 Opening issues and submitting feature requests is encouraged and appreciated! If you have ideas for improvements, encounter bugs, or want to request new features, please open an issue or submit a pull request on this repository.
