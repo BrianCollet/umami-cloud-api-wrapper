@@ -5,6 +5,7 @@ public class Metric
     public int Value { get; set; }
     public int Prev { get; set; }
     public string Diff { get; set; }
+    public string ValueWithDiff { get; set; }
 
     public Metric(int value = 0, int prev = 0)
     {
@@ -19,5 +20,7 @@ public class Metric
         }
 
         Diff = change > 0.0 ? ($"+{(int)change}%") : ($"{(int)change}%");
+
+        ValueWithDiff = $"{value}({Diff})";
     }
 }
