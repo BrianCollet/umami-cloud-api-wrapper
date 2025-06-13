@@ -35,6 +35,47 @@ Headers:
   x-umami-api-key: <your-api-key>
 ```
 
+Example output:
+
+```
+{
+  "startAt": 1749279600000,
+  "endAt": 1749884399999,
+  "apiStats": {
+    "pageViews": {
+      "value": 16,
+      "prev": 24,
+      "diff": "-33%",
+      "valueWithDiff": "16(-33%)"
+    },
+    "visitors": {
+      "value": 11,
+      "prev": 23,
+      "diff": "-52%",
+      "valueWithDiff": "11(-52%)"
+    },
+    "visits": {
+      "value": 14,
+      "prev": 24,
+      "diff": "-41%",
+      "valueWithDiff": "14(-41%)"
+    },
+    "bounces": {
+      "value": 12,
+      "prev": 24,
+      "diff": "-50%",
+      "valueWithDiff": "12(-50%)"
+    },
+    "totalTime": {
+      "value": 62,
+      "prev": 0,
+      "diff": "0%",
+      "valueWithDiff": "62(0%)"
+    }
+  }
+}
+```
+
 Supported ranges include:
 
 - `today`
