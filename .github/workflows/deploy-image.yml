@@ -33,4 +33,4 @@ jobs:
 
       - name: Publish and push the container image
         run: |
-          dotnet publish --os linux --arch x64 /p:PublishProfile=github
+          dotnet publish --os linux --arch x64 /t:PublishContainer -p ContainerRegistry=${{ env.REGISTRY }}
